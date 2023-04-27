@@ -10,7 +10,7 @@ import javax.lang.model.type.NullType;
 import java.io.FileOutputStream;
 import java.io.IOException;
 public class Main {
-    private static Map<String,Integer> statistics = new HashMap<>();
+    private static LinkedHashMap<String,Integer> statistics = new LinkedHashMap<>();
     private static Integer numOfRetweets = 0;
     private static Integer numOfEng = 0;
     private static Integer numOTweets = 0;
