@@ -71,22 +71,23 @@ public class Main {
                 //outputRunning.print("\n Reading file: " + file);
                 BufferedReader reader = new BufferedReader(new FileReader(file));
                 String line;
+                Object obj;
 ///////////////////////////////////////////////////////////////////////////////////
                 while ((line = reader.readLine()) != null) {
-///////////////////////////////////////////////////////////////////////////////////////////////
-                    percentage = (float) iter * 100 / lines;
-                    //long startTime = System.nanoTime();
-                    if (percentage % 5 == 0) {
-                        System.out.println("Creating the statistics: " + percentage + " %");
-                        //outputRunning.print("\nCreating the statistics: " + percentage + " %");
-                    }
-                    iter = iter + 1;
-///////////////////////////////////////////////////////////////////////////////////////////////
-                    Object obj;
                     try {
                         obj = new JSONParser().parse(line);
                     } catch (ParseException e) {
                         continue;
+                    } finally {
+                        //////////////////////////////////////////////////////////////////////
+                        percentage = (float) iter * 100 / lines;
+                        //long startTime = System.nanoTime();
+                        if (percentage % 1 == 0) {
+                            System.out.println("Creating the statistics: " + percentage + " %");
+                            //outputRunning.print("\nCreating the statistics: " + percentage + " %");
+                        }
+                        iter = iter + 1;
+                        ///////////////////////////////////////////////////////////////////////
                     }
                     // typecasting obj to JSONObject
                     JSONObject jo = (JSONObject) obj;
