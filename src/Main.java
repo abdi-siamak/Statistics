@@ -48,7 +48,7 @@ public class Main {
     }
     public static void main(String[] args) throws IOException {
         String pathTweets = "/data/brexit/"; // input tweets file
-        PrintWriter outputRunning = new PrintWriter("Running_Information.txt");
+        PrintWriter outputRunning = new PrintWriter("Running_information.txt");
 //////////////////////////////////////////////////////////////////////////////////// loading tweets
         File dir = new File(pathTweets);
         String[] folders = dir.list(); // list of folders
