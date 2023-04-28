@@ -42,7 +42,7 @@ public class Main {
             row_n.createCell(0).setCellValue((String)entry.getKey());
             row_n.createCell(1).setCellValue((Integer)entry.getValue());
         };
-        try(FileOutputStream fileOut = new FileOutputStream("Histogram.xlsx")){
+        try(FileOutputStream fileOut = new FileOutputStream("histogram.xlsx")){
             workbook.write(fileOut);
         }
     }
@@ -80,9 +80,9 @@ public class Main {
                         continue;
                     } finally {
                         //////////////////////////////////////////////////////////////////////
-                        percentage = (float) ((iter * 100) / lines);
+                        percentage = (float) 100* iter / lines;
                         //long startTime = System.nanoTime();
-                        if (percentage % 1 == 0) {
+                        if (percentage % 5 == 0) {
                             System.out.println("Creating the statistics: " + percentage + " %");
                             //outputRunning.print("\nCreating the statistics: " + percentage + " %");
                         }
