@@ -80,7 +80,7 @@ public class Main {
                         continue;
                     } finally {
                         //////////////////////////////////////////////////////////////////////
-                        percentage = (float) iter * 100 / lines;
+                        percentage = (float) ((iter * 100) / lines);
                         //long startTime = System.nanoTime();
                         if (percentage % 1 == 0) {
                             System.out.println("Creating the statistics: " + percentage + " %");
